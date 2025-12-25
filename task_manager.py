@@ -12,6 +12,16 @@ def show_tasks():
         for i, task in enumerate(tasks, start=1):
             print(f"{i}. {task}")
 
+def delete_task():
+    show_tasks()
+    if tasks:
+        index = int(input("Enter task number to delete: ")) - 1
+        if 0 <= index < len(tasks):
+            tasks.pop(index)
+            print("Task deleted.")
+        else:
+            print("Invalid task number.")
+
 def main():
     while True:
         print("\nTask Manager CLI")
@@ -26,8 +36,11 @@ def main():
             add_task()
         elif choice == "2":
             show_tasks()
+        elif choice == "3":
+            delete_task()
         elif choice == "4":
             break
 
 if __name__ == "__main__":
     main()
+    
