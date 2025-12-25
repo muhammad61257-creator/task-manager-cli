@@ -5,6 +5,13 @@ def add_task():
     tasks.append(task)
     print("Task added.")
 
+def show_tasks():
+    if not tasks:
+        print("No tasks available.")
+    else:
+        for i, task in enumerate(tasks, start=1):
+            print(f"{i}. {task}")
+
 def main():
     while True:
         print("\nTask Manager CLI")
@@ -17,6 +24,8 @@ def main():
 
         if choice == "1":
             add_task()
+        elif choice == "2":
+            show_tasks()
         elif choice == "4":
             break
 
